@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
+import {ProductListComponent} from './components/products/product-list.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        ProductListComponent
     ],
     imports: [
         CommonModule,
