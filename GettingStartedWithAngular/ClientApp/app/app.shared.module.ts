@@ -6,13 +6,15 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
 import { ProductListComponent } from './components/products/product-list.component';
-import { ConvertToSpacesPipe } from "./shared/ConvertToSpacesPipe"
+import { ConvertToSpacesPipe } from "./shared/ConvertToSpacesPipe";
+import { StarComponent } from "./shared/star.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         ProductListComponent,
-        ConvertToSpacesPipe
+        ConvertToSpacesPipe,
+        StarComponent
     ],
     imports: [
         CommonModule,
