@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { FormsModule } from "@angular/forms";
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './components/app/app.component';
 import { ProductListComponent } from './components/products/product-list.component';
@@ -18,9 +18,8 @@ import { StarComponent } from "./shared/star.component";
     ],
     imports: [
         CommonModule,
-        HttpModule,
-        FormsModule
-    ]
+        FormsModule,
+        HttpClientModule]
 })
 export class AppModuleShared {
 }
