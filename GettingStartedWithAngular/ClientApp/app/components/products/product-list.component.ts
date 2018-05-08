@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from "@angular/core"
 import { IProduct } from './product';
-import {ProductService} from './product.service';
+import { ProductService } from './product.service';
 
 @Component({
     selector: 'products',
@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
     imageMargin: number = 2;
     showImage: boolean = false;
     _listFilter: string;
+    errorMessage: string;
 
     get listFilter(): string {
         return this._listFilter;
@@ -31,8 +32,12 @@ export class ProductListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.products = this._productService.getProducts();
-        this.filteredProducts = this.products;
+        this._productService.getProducts()
+            .subscribe(products => {
+                this.products = products;
+                this.filteredProducts = products;
+            },
+            error => this.errorMessage = error);
     }
 
     toggleImage(): void {
@@ -47,5 +52,4 @@ export class ProductListComponent implements OnInit {
     onRatingClicked(message: string): void {
         this.pageTitle = 'Product List: ' + message;
     }
-
 }
