@@ -5,6 +5,8 @@ import { IProduct } from './product';
 import { Observable } from "rxjs/Observable"
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/catch";
+import "rxjs/add/operator/map";
+
 
 
 @Injectable()
@@ -19,6 +21,11 @@ export class ProductService {
         return this._httpClient.get<IProduct[]>(this._productUrl)
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
+    }
+
+    getProduct(id: number): Observable<IProduct | undefined> {
+        return this.getProducts()
+                   .map((products: IProduct[]) => products.find(p => p.productId === id));
     }
 
    
