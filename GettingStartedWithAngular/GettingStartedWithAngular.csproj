@@ -21,11 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\app\product-list.component.ts" />
+    <None Remove="ClientApp\app\products\product-list.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\products\product-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\products\product-list.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\dist\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
