@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ProductListComponent } from './product-list.component';
-import { ConvertToSpacesPipe } from "../shared/ConvertToSpacesPipe";
+import { ConvertToSpacesPipe } from "../shared/convert-to-spaces.pipe";
 import { StarComponent } from "../shared/star.component";
 import { ProductDetailComponent } from "./product-detail.component";
 import { ProductGuardService } from './product-guardservice';
