@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SharedModule } from "../shared/shared.module";
+
 import { ProductListComponent } from './product-list.component';
-import { ConvertToSpacesPipe } from "../shared/convert-to-spaces.pipe";
-import { StarComponent } from "../shared/star.component";
 import { ProductDetailComponent } from "./product-detail.component";
 import { ProductGuardService } from './product-guardservice';
 import { ProductService } from './product.service';
@@ -15,13 +13,10 @@ import { ProductService } from './product.service';
 @NgModule({
     declarations: [
         ProductListComponent,
-        ConvertToSpacesPipe,
-        StarComponent,
         ProductDetailComponent
     ],
     imports: [
-        CommonModule,
-        FormsModule,
+        SharedModule,
         HttpClientModule,
         RouterModule.forChild([
             { path: 'products', component: ProductListComponent },
